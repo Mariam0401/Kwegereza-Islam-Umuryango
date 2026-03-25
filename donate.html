@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kwegera Islam</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body { font-family: 'Segoe UI', sans-serif; }
+
+/* Curved navbar */
+.navbar {
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+/* Cards */
+.card {
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+</style>
+
+</head>
+
+<body class="bg-gray-100">
+
+<!-- TOP BAR -->
+<div class="text-white text-xs md:text-sm py-2" style="background-color:#0B3D2E">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 gap-2">
+
+    <!-- LEFT -->
+    <div class="flex flex-wrap justify-center md:justify-start items-center gap-3">
+      <span>EN ▾</span>
+      <span class="sm:flex items-center gap-1">
+        <i class="fa fa-phone"></i> +250723061482
+      </span>
+      <span class="md:flex items-center gap-1">
+        <i class="fa fa-location-dot"></i> Contact Us
+      </span>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="flex items-center gap-2 md:gap-4">
+
+      <!-- Search -->
+      <!-- <div class="hidden sm:flex bg-green-800 px-2 py-1 rounded items-center gap-2">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Search"
+          class="bg-transparent outline-none text-white text-xs w-16 md:w-24">
+      </div> -->
+
+    <div id="openSearch"
+      class="sm:flex bg-green-800 px-3 py-1 rounded items-center gap-2 cursor-pointer hover:bg-green-700 transition">
+      
+      <i class="fa fa-search text-white"></i>
+      <!-- <span class="text-white text-xs">Search...</span> -->
+
+    </div>
+
+      <!-- Login -->
+      <button style="background-color:#C9A227" class="text-black px-3 py-1 rounded-full text-xs md:text-sm font-semibold">
+        <i class="fas fa-user"></i>&nbsp;Account
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- NAVBAR -->
+<div class="bg-white shadow navbar relative">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <div class="w-10 h-10 flex items-center justify-center text-white font-bold">
+        <img src="images/logo.png">
+      </div>
+      <p class="text-sm">Kwegereza islam umuryango</p>
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
+
+      <a href="index.html" class="flex items-center gap-2">
+        <i class="fas fa-home"></i> Home
+      </a>
+
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-info-circle"></i> About Us
+      </a>
+
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-graduation-cap"></i> Programs ▾
+      </a>
+
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-book-open"></i> Learning ▾
+      </a>
+
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-users"></i> Community ▾
+      </a>
+
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-photo-film"></i> Media ▾
+      </a>
+
+    </nav>
+
+    <!-- Right Buttons -->
+    <div class="flex items-center gap-3">
+
+      <!-- Donate -->
+      <button style="background-color:#C9A227" class="hidden md:flex items-center gap-2 px-5 py-2 rounded-full font-semibold">
+        <i class="fas fa-hand-holding-heart"></i> Donate
+      </button>
+
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden text-2xl text-green-800">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+    class="hidden md:hidden flex flex-col bg-white px-6 pb-4 space-y-3 text-gray-700 font-medium">
+
+    <a href="index.html" class="flex items-center gap-2 text-yellow-600">
+      <i class="fas fa-home"></i> Home
+    </a>
+
+    <a href="#" class="flex items-center gap-2">
+      <i class="fas fa-info-circle"></i> About Us
+    </a>
+
+    <a href="#" class="flex items-center gap-2">
+      <i class="fas fa-graduation-cap"></i> Programs
+    </a>
+
+    <a href="#" class="flex items-center gap-2">
+      <i class="fas fa-book-open"></i> Learning
+    </a>
+
+    <a href="#" class="flex items-center gap-2">
+      <i class="fas fa-users"></i> Community
+    </a>
+
+    <a href="#" class="flex items-center gap-2">
+      <i class="fas fa-photo-film"></i> Media
+    </a>
+
+    <button style="background-color:#C9A227" class="flex items-center justify-center gap-2 mt-3 py-2 rounded-full font-semibold">
+      <i class="fas fa-hand-holding-heart"></i> Donate
+    </button>
+
+  </div>
+</div>
+
+<div id="searchModal"
+  class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+
+  <div class="bg-white w-full max-w-lg mx-4 rounded-2xl p-6 relative">
+
+    <!-- Close Button -->
+    <button id="closeSearch"
+      class="absolute top-3 right-4 text-gray-500 hover:text-black text-xl">
+      <i class="fa fa-times"></i>
+    </button>
+
+    <!-- Title -->
+    <h2 class="text-xl font-semibold mb-4">Search</h2>
+
+    <!-- Input -->
+    <div class="flex items-center border rounded-lg px-3">
+      <i class="fa fa-search text-gray-400"></i>
+      <input type="text" placeholder="Type to search..."
+        class="w-full p-3 outline-none">
+    </div>
+
+  </div>
+</div>
+
+
+<section class="min-h-[80vh] flex items-center justify-center bg-gray-100 px-4 py-10">
+
+  <div class="bg-white shadow-xl rounded-2xl w-full max-w-lg p-6 sm:p-8">
+
+    <!-- Title -->
+    <div class="text-center mb-6">
+      <h2 class="text-2xl font-bold text-gray-800">Support Our Mission</h2>
+      <p class="text-gray-500 text-sm mt-1">
+        Your donation helps us grow and support the community
+      </p>
+    </div>
+
+    <!-- Preset Amounts -->
+    <!-- <div class="grid grid-cols-3 gap-3 mb-5">
+      <button class="amount-btn border rounded-lg py-2 hover:bg-indigo-600 hover:text-white">5,000 RWF</button>
+      <button class="amount-btn border rounded-lg py-2 hover:bg-indigo-600 hover:text-white">10,000 RWF</button>
+      <button class="amount-btn border rounded-lg py-2 hover:bg-indigo-600 hover:text-white">20,000 RWF</button>
+      <button class="amount-btn border rounded-lg py-2 hover:bg-indigo-600 hover:text-white">50,000 RWF</button>
+      <button class="amount-btn border rounded-lg py-2 hover:bg-indigo-600 hover:text-white">100,000 RWF</button>
+      <button class="amount-btn border rounded-lg py-2 hover:bg-indigo-600 hover:text-white">Other</button>
+    </div> -->
+
+    <!-- Custom Amount -->
+    <div class="mb-5">
+      <label class="text-sm font-medium text-gray-700">Custom Amount (RWF)</label>
+      <input type="number" id="customAmount"
+        placeholder="Enter amount"
+        class="w-full border rounded-lg p-2 mt-1 outline-none focus:ring-2 focus:ring-indigo-500">
+    </div>
+
+    <!-- Name -->
+    <div class="mb-5">
+      <label class="text-sm font-medium text-gray-700">Full Name</label>
+      <input type="text"
+        placeholder="Enter your name"
+        class="w-full border rounded-lg p-2 mt-1 outline-none focus:ring-2 focus:ring-indigo-500">
+    </div>
+
+    <!-- Payment Method -->
+    <div class="mb-6">
+      <label class="text-sm font-medium text-gray-700">Payment Method</label>
+      <select class="w-full border rounded-lg p-2 mt-1 outline-none focus:ring-2 focus:ring-indigo-500">
+        <option>MTN Mobile Money</option>
+        <option>Airtel Money</option>
+        <option>Bank Transfer</option>
+      </select>
+    </div>
+
+    <!-- Donate Button -->
+    <button class="w-full bg-yellow-500 text-black py-3 rounded-xl hover:bg-yellow-600 transition font-semibold">
+      Donate Now
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<script>
+
+$(document).ready(function(){
+    $("button").click(function(){
+      $(this).addClass("scale-95");
+      setTimeout(() => {
+        $(this).removeClass("scale-95");
+      }, 150);
+    });
+  });
+
+  document.getElementById("menuBtn").addEventListener("click", function() {
+    let menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  });
+
+const buttons = document.querySelectorAll(".amount-btn");
+const input = document.getElementById("customAmount");
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("bg-indigo-600","text-white"));
+    btn.classList.add("bg-indigo-600","text-white");
+
+    let value = btn.innerText.replace(/[^0-9]/g, '');
+    if (value) input.value = value;
+    if (btn.innerText === "Other") input.focus();
+  });
+});
+
+const openBtn = document.getElementById("openSearch");
+const modal = document.getElementById("searchModal");
+const closeBtn = document.getElementById("closeSearch");
+
+openBtn.onclick = () => {
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+};
+
+closeBtn.onclick = () => {
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+};
+
+// Close when clicking outside
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+});
+</script>
+
+</body>
+</html>
