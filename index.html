@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kwegera Islam</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body { font-family: 'Segoe UI', sans-serif; }
+
+/* Curved navbar */
+.navbar {
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+/* Cards */
+.card {
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+</style>
+
+</head>
+
+<body class="bg-gray-100">
+
+<!-- TOP BAR -->
+<div class="text-white text-xs md:text-sm py-2" style="background-color:#0B3D2E">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 gap-2">
+
+    <!-- LEFT -->
+    <div class="flex flex-wrap justify-center md:justify-start items-center gap-3">
+      <span>EN ▾</span>
+      <span class="hidden sm:flex items-center gap-1">
+        <i class="fa fa-phone"></i> +250723 061 482
+      </span>
+      <span class="hidden md:flex items-center gap-1">
+        <i class="fa fa-location-dot"></i> Contact Us
+      </span>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="flex items-center gap-2 md:gap-4">
+
+      <!-- Search -->
+      <div class="hidden sm:flex bg-green-800 px-2 py-1 rounded items-center gap-2">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Search"
+          class="bg-transparent outline-none text-white text-xs w-16 md:w-24">
+      </div>
+
+      <!-- Login -->
+      <button style="background-color:#C9A227" class="text-black px-3 py-1 rounded-full text-xs md:text-sm font-semibold">
+        <i class="fas fa-user"></i>&nbsp;Account
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- NAVBAR -->
+<div class="bg-white shadow navbar relative">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <div class="w-10 h-10 flex items-center justify-center text-white font-bold">
+        <img src="images/logo.png">
+      </div>
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
+
+      <a href="#" class="text-yellow-600 flex items-center gap-2">
+        <i class="fas fa-home"></i> Home
+      </a>
+
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-info-circle"></i> About Us
+      </a>
+
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-graduation-cap"></i> Programs ▾
+      </a>
+
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-book-open"></i> Learning ▾
+      </a>
+
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-users"></i> Community ▾
+      </a>
+
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-photo-film"></i> Media ▾
+      </a>
+
+    </nav>
+
+    <!-- Right Buttons -->
+    <div class="flex items-center gap-3">
+
+      <!-- Donate -->
+      <button style="background-color:#C9A227" class="hidden md:flex items-center gap-2 px-5 py-2 rounded-full font-semibold">
+        <i class="fas fa-hand-holding-heart"></i> Donate
+      </button>
+
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden text-2xl text-green-800">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+    class="hidden md:hidden flex flex-col bg-white px-6 pb-4 space-y-3 text-gray-700 font-medium">
+
+    <a href="#" class="flex items-center gap-2 text-yellow-600">
+      <i class="fas fa-home"></i> Home
+    </a>
+
+    <a href="#" class="flex items-center gap-2">
+      <i class="fas fa-info-circle"></i> About Us
+    </a>
+
+    <a href="#" class="flex items-center gap-2">
+      <i class="fas fa-graduation-cap"></i> Programs
+    </a>
+
+    <a href="#" class="flex items-center gap-2">
+      <i class="fas fa-book-open"></i> Learning
+    </a>
+
+    <a href="#" class="flex items-center gap-2">
+      <i class="fas fa-users"></i> Community
+    </a>
+
+    <a href="#" class="flex items-center gap-2">
+      <i class="fas fa-photo-film"></i> Media
+    </a>
+
+    <button style="background-color:#C9A227" class="flex items-center justify-center gap-2 mt-3 py-2 rounded-full font-semibold">
+      <i class="fas fa-hand-holding-heart"></i> Donate
+    </button>
+
+  </div>
+</div>
+
+<!-- HERO -->
+
+<section class="py-20 text-center"
+  style="background-image: url('images/background.jpg');
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: center;">
+
+  <div class="max-w-4xl mx-auto">
+    <div class="w-28 h-28 mx-auto mb-6 flex items-center justify-center text-white text-2xl">
+        <img src="images/logo.png">
+    </div>
+
+    <div class="flex justify-center gap-4">
+      <button class="bg-white px-6 py-2 rounded-full hover:bg-gray-300">
+        Learn islam
+      </button>
+
+      <button style="background-color:#C9A227" class="px-6 py-2 rounded-full hover:bg-yellow-400">
+        Join community
+      </button>
+    </div>
+  </div>
+
+</section>
+
+<!-- AYAH + HADITH -->
+<section class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 py-12 px-4">
+
+  <div class="bg-white border border-yellow-300 p-6 rounded-lg text-center">
+    <h3 class="text-green-700 font-bold text-lg mb-2">Daily Ayah</h3>
+    <p class="text-xl mb-2">إِنَّ اللَّهَ مَعَ الصَّابِرِينَ</p>
+    <p class="italic">“Indeed, Allah is with the patient.”</p>
+    <p class="text-green-600 mt-2">Surah Al-Baqarah 2:153</p>
+  </div>
+
+  <div class="bg-white border border-yellow-300 p-6 rounded-lg text-center">
+    <h3 class="text-green-700 font-bold text-lg mb-2">Hadith of the Day</h3>
+    <p class="text-xl mb-2">خَيْرُكُمْ خَيْرُكُمْ لِأَهْلِهِ</p>
+    <p class="italic">“The best of you are the best to their families.”</p>
+  </div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="max-w-7xl mx-auto grid md:grid-cols-4 gap-6 px-4 pb-10 text-center">
+
+  <div class="bg-white rounded-xl shadow-md overflow-hidden text-center w-full max-w-xs mx-auto">
+
+    <!-- Top curved tab -->
+    <div class="h-16 flex items-center justify-center rounded-b-[40px]" style="background-color:#C9A227">
+      <i class="fa fa-book text-green-900 text-2xl"></i>
+    </div>
+
+    <!-- Content -->
+    <div class="p-5">
+      <h4 class="font-bold text-green-800">Our program</h4>
+      <p class="text-gray-500 text-sm mt-1">Da’wah</p>
+    </div>
+
+  </div>
+
+  <div class="bg-white rounded-xl shadow-md overflow-hidden text-center w-full max-w-xs mx-auto">
+
+    <!-- Top curved tab -->
+    <div class="h-16 flex items-center justify-center rounded-b-[40px]" style="background-color:#C9A227">
+      <i class="fa fa-book-open text-green-700 text-2xl mb-3"></i>
+    </div>
+
+    <!-- Content -->
+    <div class="p-5">
+      <h4 class="font-bold">Islamic courses</h4>
+
+      <p class="text-gray-500">Qoraan, Hadith, Tawhid</p>
+
+    </div>
+
+  </div>
+
+  <div class="bg-white rounded-xl shadow-md overflow-hidden text-center w-full max-w-xs mx-auto">
+
+    <!-- Top curved tab -->
+    <div class="h-16 flex items-center justify-center rounded-b-[40px]" style="background-color:#C9A227">
+      <i class="fa fa-circle-question text-green-700 text-2xl mb-3"></i>
+    </div>
+
+    <!-- Content -->
+    <div class="p-5">
+      <h4 class="font-bold">Question & ans</h4>
+      <p class="text-gray-500">Islamic Q&A</p>
+    </div>
+
+  </div>
+
+  <div class="bg-white rounded-xl shadow-md overflow-hidden text-center w-full max-w-xs mx-auto">
+
+    <!-- Top curved tab -->
+    <div class="h-16 flex items-center justify-center rounded-b-[40px]" style="background-color:#C9A227">
+      <i class="fa fa-video text-green-700 text-2xl mb-3"></i>
+    </div>
+
+    <!-- Content -->
+    <div class="p-5">
+      <h4 class="font-bold">Latest videos</h4>
+      <p class="text-gray-500">Lessons & talks</p>
+
+    </div>
+
+  </div>
+
+
+</section>
+
+<!-- MISSION -->
+<div class="text-center pb-10">
+  <h2 class="text-green-700 text-xl font-bold">Support Our Mission</h2>
+  <p class="italic text-gray-600">Bringing Islam closer to families & communities</p>
+</div>
+
+<!-- FOOTER -->
+<div style="background-color:#C9A227;height:15px;"></div>
+<footer class="text-white py-10" style="background-color:#0B6D20;">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
+
+    <div>
+      <h3 class="font-bold text-lg mb-3">Contact Us</h3>
+      <p><i class="fa fa-phone"></i> +250723 061 482</p>
+      <p><i class="fa fa-envelope"></i> info@kwegeraza.org</p>
+      <p><i class="fa fa-location-dot"></i> Rwanda</p>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-lg mb-3">Links</h3>
+      <p><i class="fas fa-home"></i> Home</p>
+      <p><i class="fas fa-info-circle"></i> About us</p>
+      <p><i class="fas fa-graduation-cap"></i> Programs</p>
+    </div>
+
+    <div>
+      <h3 class="font-bold text-lg mb-3">Join our community</h3>
+      <p><i class="fab fa-telegram"></i> Telegram</p>
+      <p><i class="fab fa-facebook"></i> Facebook</p>
+      <p><i class="fab fa-whatsapp"></i> WhatsApp</p>
+    </div>
+
+  </div>
+</footer>
+<div style="background-color:#0B3D2E;">
+    <p class="text-center text-white text-sm p-4">
+      2026 Kwegera Islam Umuryango. All Rights Reserved.
+    </p>
+  </div>
+<!-- INTERACTIONS -->
+<script>
+  $(document).ready(function(){
+    $("button").click(function(){
+      $(this).addClass("scale-95");
+      setTimeout(() => {
+        $(this).removeClass("scale-95");
+      }, 150);
+    });
+  });
+
+  document.getElementById("menuBtn").addEventListener("click", function() {
+    let menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  });
+</script>
+</body>
+</html>
